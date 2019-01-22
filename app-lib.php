@@ -44,11 +44,12 @@ function openDB() {
   if(!is_resource($db)) {
     /* Conection String eg.: mysqli("localhost", "lpaecomms", "letmein", "lpaecomms")
      *   - Replace the connection string tags below with your MySQL parameters
+     * ("<SEVER>", "<USER NAME>", "<PASSWORD>", "<DATABASE>")
      */
     $db = new mysqli(
       "localhost",
-      "lpa_ecomms",
-      "5XmvHX4djjzQRMRS",
+      "root",
+      "",
       "lpa_ecomms"
     );
     if ($db->connect_errno) {
