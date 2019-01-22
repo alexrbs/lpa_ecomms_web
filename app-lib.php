@@ -30,6 +30,7 @@ if(isset($authChk) == true) {
     $result = $db->query($query);
     $row = $result->fetch_assoc();
     $displayName = $row['lpa_user_firstname']." ".$row['lpa_user_lastname'];
+    $displayGroup = $row['lpa_user_group'];
   } else {
     header("location: login.php");
   }
@@ -44,7 +45,6 @@ function openDB() {
   if(!is_resource($db)) {
     /* Conection String eg.: mysqli("localhost", "lpaecomms", "letmein", "lpaecomms")
      *   - Replace the connection string tags below with your MySQL parameters
-     * ("<SEVER>", "<USER NAME>", "<PASSWORD>", "<DATABASE>")
      */
     $db = new mysqli(
       "localhost",
@@ -104,6 +104,7 @@ if(isset($_REQUEST['killses']) == "true") {
  */
 function build_header() {
   global $displayName;
+  global $displayGroup;
 
   include 'header.php';
 }
