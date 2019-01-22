@@ -14,5 +14,7 @@
         Interface Sample Website
       </div>
     </div>
-    <div style="float:right">Welcome <?php echo $displayName; ?></div>
+    <div style="text-align:right">Welcome <?php echo $displayName; ?>
+        <br> Status: <?php echo $displayGroup ?>
+    </div>
     <div style="clear: right"></div>
