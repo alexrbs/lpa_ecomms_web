@@ -36,11 +36,13 @@
       if($action == "listInvoices") {
     ?>
     <div>
-      <table style="width: calc(100% - 15px);border: #cccccc solid 1px">
+      <table style="width: calc(100% - 15px);border: #cccccc solid 1px; margin-top: 5px">
         <tr style="background: #eeeeee">
-          <td style="width: 80px;border-left: #cccccc solid 1px"><b>Client Number</b></td>
-          <td style="border-left: #cccccc solid 1px"><b>Client Name</b></td>
-          <td style="width: 80px;text-align: right"><b>Price</b></td>
+          <td style="width: 80px;border-left: #cccccc solid 1px; padding-left: 10px"><b>Client Number</b></td>
+          <td style="border-left: #cccccc solid 1px; border-right: #cccccc solid 1px; padding-left: 10px">
+            <b>Client Name</b></td>
+          <td style="border-right: #cccccc solid 1px; text-align: center"><b>Date</b></td>
+          <td style="width: 80px;text-align: right; padding-right: 10px"><b>Price</b></td>
         </tr>
     <?PHP
       openDB();
@@ -53,6 +55,8 @@
             lpa_inv_client_ID LIKE '%$txtSearch%'
          OR
             lpa_inv_client_name LIKE '%$txtSearch%'
+         OR
+            lpa_inv_date LIKE '%$txtSearch%'
 
          ";
       $result = $db->query($query);
@@ -63,14 +67,19 @@
           ?>
           <tr class="hl">
             <td onclick="loadClientName(<?PHP echo $sid; ?>,'Edit')"
-                style="cursor: pointer;border-left: #cccccc solid 1px">
+                style="cursor: pointer;border-left: #cccccc solid 1px; padding-left: 10px">
               <?PHP echo $sid; ?>
             </td>
             <td onclick="loadClientName(<?PHP echo $sid; ?>,'Edit')"
-                style="cursor: pointer;border-left: #cccccc solid 1px">
+                style="cursor: pointer;border-left: #cccccc solid 1px; border-right: #cccccc solid 1px;
+                padding-left: 10px">
                 <?PHP echo $row['lpa_inv_client_name']; ?>
             </td>
-            <td style="text-align: right">
+            <td onclick="loadClientName(<?PHP echo $sid; ?>,'Edit')"
+                style="cursor: pointer;border-right: #cccccc solid 1px; text-align: center">
+                <?PHP echo $row['lpa_inv_date']; ?>
+            </td>
+            <td style="text-align: right; padding-right: 10px">
               <?PHP echo $row['lpa_inv_amount']; ?>
             </td>
           </tr>
@@ -83,6 +92,25 @@
         </tr>
       <?PHP } ?>
       </table>
+      <!-- Begin sum of all sales -->
+      <?php
+        openDB();
+        $query = "SELECT SUM(lpa_inv_amount) AS inv_sum FROM lpa_invoices";
+        $result = $db->query($query);
+        $row = $result->fetch_assoc();
+        $sum = $row['inv_sum'];
+      ?>
+      <!-- End sum of all sales -->
+      <!-- Begin Table printing sales values -->
+      <table style="width: calc(100% - 15px)">
+          <tr>
+            <td style="border-right: #cccccc solid 1px; border-left: #cccccc solid 1px;
+            border-bottom: #cccccc solid 1px; text-align: right; padding-right: 10px">
+              <b>Total: </b><?php echo $sum ?>
+            </td>
+          </tr>
+      </table>
+      <!-- End Table printing sales values -->
     </div>
     <?PHP } ?>
     <!-- Search Section List End -->
