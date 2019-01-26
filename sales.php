@@ -61,9 +61,11 @@
          ";
       $result = $db->query($query);
       $row_cnt = $result->num_rows;
+      $sum = 0; //variable that saves the sum sales value
       if($row_cnt >= 1) {
         while ($row = $result->fetch_assoc()) {
           $sid = $row['lpa_inv_no'];
+          $sum += $row['lpa_inv_amount']; // sums all sales values from the search
           ?>
           <tr class="hl">
             <td onclick="loadClientName(<?PHP echo $sid; ?>,'Edit')"
@@ -92,15 +94,6 @@
         </tr>
       <?PHP } ?>
       </table>
-      <!-- Begin sum of all sales -->
-      <?php
-        openDB();
-        $query = "SELECT SUM(lpa_inv_amount) AS inv_sum FROM lpa_invoices";
-        $result = $db->query($query);
-        $row = $result->fetch_assoc();
-        $sum = $row['inv_sum'];
-      ?>
-      <!-- End sum of all sales -->
       <!-- Begin Table printing sales values -->
       <table style="width: calc(100% - 15px)">
           <tr>
