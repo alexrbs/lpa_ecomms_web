@@ -36,7 +36,7 @@
       if($action == "listStock") {
     ?>
     <div>
-      <table style="width: calc(100% - 15px);border: #cccccc solid 1px">
+      <table style="width: calc(100% - 15px);border: #cccccc solid 1px; margin-top: 5px">
         <tr style="background: #eeeeee">
           <td style="width: 80px;border-left: #cccccc solid 1px"><b>Stock Code</b></td>
           <td style="border-left: #cccccc solid 1px"><b>Stock Name</b></td>
