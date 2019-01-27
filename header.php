@@ -11,7 +11,7 @@
   <body>
     <div id="header">
       <div style="margin-left: 10px">
-        Interface Sample Website
+        Logic Peripherals Australia
       </div>
     </div>
     <div style="text-align:right">Welcome <?php echo $displayName; ?>
