@@ -116,22 +116,32 @@
     <div class="PageTitle">Stock Record Management (<?PHP echo $action; ?>)</div>
     <form name="frmStockRec" id="frmStockRec" method="post" action="<?PHP echo $_SERVER['PHP_SELF']; ?>">
       <div>
-        <input name="txtStockID" id="txtStockID" placeholder="Stock ID" value="<?PHP echo $stockID; ?>" style="width: 100px;" title="Stock ID">
+        <div><b>Stock ID </b></div>
+        <input name="txtStockID" id="txtStockID" placeholder="Stock ID" value="<?PHP echo $stockID; ?>"
+        style="width: 100px;" title="Stock ID">
       </div>
       <div style="margin-top: <?PHP echo $fieldSpacer; ?>">
-        <input name="txtStockName" id="txtStockName" placeholder="Stock Name" value="<?PHP echo $stockName; ?>" style="width: 400px;"  title="Stock Name">
+        <div><b>Product Name </b></div>
+        <input name="txtStockName" id="txtStockName" placeholder="Stock Name" value="<?PHP echo $stockName; ?>"
+        style="width: 400px;"  title="Stock Name">
       </div>
       <div style="margin-top: <?PHP echo $fieldSpacer; ?>">
-        <textarea name="txtStockDesc" id="txtStockDesc" placeholder="Stock Description" style="width: 400px;height: 80px"  title="Stock Description"><?PHP echo $stockDesc; ?></textarea>
+        <div><b>Product Description </b></div>
+        <textarea name="txtStockDesc" id="txtStockDesc" placeholder="Stock Description" style="width: 400px;height: 80px"
+        title="Stock Description"><?PHP echo $stockDesc; ?></textarea>
       </div>
       <div style="margin-top: <?PHP echo $fieldSpacer; ?>">
-        <input name="txtStockOnHand" id="txtStockOnHand" placeholder="Stock On-Hand" value="<?PHP echo $stockOnHand; ?>" style="width: 90px;text-align: right"  title="Stock On-Hand">
+        <div><b>In Stock </b></div>
+        <input name="txtStockOnHand" id="txtStockOnHand" placeholder="Stock On-Hand" value="<?PHP echo $stockOnHand; ?>"
+        style="width: 90px;text-align: right"  title="Stock On-Hand">
       </div>
       <div style="margin-top: <?PHP echo $fieldSpacer; ?>">
-        <input name="txtStockPrice" id="txtStockPrice" placeholder="Stock Price" value="<?PHP echo $stockPrice; ?>" style="width: 90px;text-align: right"  title="Stock Price">
+        <div><b>Price </b></div>
+        <input name="txtStockPrice" id="txtStockPrice" placeholder="Stock Price" value="<?PHP echo $stockPrice; ?>"
+        style="width: 90px;text-align: right"  title="Stock Price">
       </div>
       <div style="margin-top: <?PHP echo $fieldSpacer; ?>">
-        <div>Stock Status:</div>
+        <div><b>Stock Status:</b></div>
         <input name="txtStatus" id="txtStockStatusActive" type="radio" value="a">
           <label for="txtStockStatusActive">Active</label>
         <input name="txtStatus" id="txtStockStatusInactive" type="radio" value="i">
