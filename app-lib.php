@@ -116,11 +116,11 @@ function build_header() {
 function build_navBlock() { ?>
     <div id="navBlock">
       <div id="navHeader">MAIN MENU</div>
-      <div class="navItem" onclick="navMan('index.php')">HOME</div>
-      <div class="navItem" onclick="navMan('stock.php')">STOCK</div>
-      <div class="navItem" onclick="navMan('sales.php')">SALES</div>
+      <div id="navHome"class="navItem" onclick="navMan('index.php')">HOME</div>
+      <div id="navStock"class="navItem" onclick="navMan('stock.php')">STOCK</div>
+      <div id="navSales" class="navItem" onclick="navMan('sales.php')">SALES</div>
       <div class="menuSep"></div>
-      <div class="navItem" onclick="navMan('login.php?killses=true')">Logout</div>
+      <div id="navLog" class="navItem" onclick="navMan('login.php?killses=true')">Logout</div>
     </div>
 <?PHP
 }
