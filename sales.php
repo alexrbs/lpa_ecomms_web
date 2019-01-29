@@ -99,7 +99,7 @@
           <tr>
             <td style="border-right: #cccccc solid 1px; border-left: #cccccc solid 1px;
             border-bottom: #cccccc solid 1px; text-align: right; padding-right: 10px">
-              <b>Total: </b><?php echo $sum ?>
+              <b>Total: </b><?php echo floatval($sum) ?>
             </td>
           </tr>
       </table>
