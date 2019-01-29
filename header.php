@@ -14,7 +14,7 @@
         Logic Peripherals Australia
       </div>
     </div>
-    <div style="text-align:right">Welcome <?php echo $displayName; ?>
-        <br> Status: <?php echo $displayGroup ?> <!--added to display user privileges-->
+    <div style="text-align:right"><b>Welcome: </b><?php echo $displayName; ?>
+      <br><b>Status: </b><?php echo $displayGroup ?> <!--added to display user privileges-->
     </div>
     <div style="clear: right"></div>
