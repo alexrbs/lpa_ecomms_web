@@ -13,7 +13,7 @@ date_default_timezone_set('Australia/Queensland');
 // Database instance variable
 $db = null;
 $displayName = "";
-
+$displayGroup = "";
 
 // Start the session
 session_name("lpaecomms");
