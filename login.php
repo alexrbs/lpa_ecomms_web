@@ -1,4 +1,4 @@
-<?PHP 
+<?PHP
   require('app-lib.php');
   isset($_POST['a'])? $action = $_POST['a'] : $action = "";
   $msg = null;
@@ -29,7 +29,7 @@
     if($row['lpa_user_username'] == $uName) {
       if($row['lpa_user_password'] == $uPassword) {
         $_SESSION['authUser'] = $row['lpa_user_ID'];
-        header("Location: /");
+        header("Location: index.php");
         exit;
       }
     }
