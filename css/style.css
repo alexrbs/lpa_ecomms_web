@@ -55,11 +55,9 @@ a:hover {
     width: 200px;
     border: 1px solid #777777;
     margin-right: 10px;
-    height: 180px;
+    height: 250px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-		border-bottom-right-radius: 10px;
-		border-bottom-left-radius: 10px;
     background-color: #FFFFFF;
 }
 #navHeader{
@@ -108,7 +106,6 @@ a:hover {
     color: #FFFFFF;
     font-size: 15px;
     font-weight: bold;
-    margin-bottom: 2px;
     padding: 5px;
     cursor: pointer;
 		text-align: center;
