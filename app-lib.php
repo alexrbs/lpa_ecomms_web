@@ -113,16 +113,30 @@ function build_header() {
 /**
  * Build the Navigation block
  */
-function build_navBlock() { ?>
+function build_navBlock() {
+if (/* Work In Progress */) {
+    ?>
     <div id="navBlock">
       <div id="navHeader">MAIN MENU</div>
       <div id="navHome"class="navItem" onclick="navMan('index.php')">HOME</div>
       <div id="navStock"class="navItem" onclick="navMan('stock.php')">STOCK</div>
       <div id="navSales" class="navItem" onclick="navMan('sales.php')">SALES</div>
+      <div id="navReg" class="navItem" onclick="navMan('reg.php')">REGISTER</div>
       <div class="menuSep"></div>
       <div id="navLog" onclick="navMan('login.php?killses=true')">LOGOUT</div>
     </div>
-<?PHP
+    <?PHP
+  }else { ?>
+      <div id="navBlock">
+        <div id="navHeader">MAIN MENU</div>
+        <div id="navHome"class="navItem" onclick="navMan('index.php')">HOME</div>
+        <div id="navStock"class="navItem" onclick="navMan('stock.php')">STOCK</div>
+        <div id="navSales" class="navItem" onclick="navMan('sales.php')">SALES</div>
+        <div class="menuSep"></div>
+        <div id="navLog" onclick="navMan('login.php?killses=true')">LOGOUT</div>
+      </div>
+      <?PHP
+  }
 }
 
 /**
