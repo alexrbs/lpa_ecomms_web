@@ -23,7 +23,7 @@
         <div class="displayPaneCaption">Search:</div>
         <div>
           <input name="txtSearch" id="txtSearch" placeholder="Search Invoices"
-          style="width: calc(100% - 115px)" value="<?PHP echo $txtSearch; ?>">
+          value="<?PHP echo $txtSearch; ?>">
           <button type="button" id="btnSearch">Search</button>
           <button type="button" id="btnAddRec">Add</button>
         </div>
