@@ -110,11 +110,16 @@ function build_header() {
 }
 
 
-/**
- * Build the Navigation block
- */
+//Begining of the function Build the Navigation block with an administrator check
+
 function build_navBlock() {
-if (/* Work In Progress */) {
+  global $displayGroup;
+  /*
+  Coloquei as condicoes 'if' e 'else' dentro dessa funcao que constroi o navBlock
+  O 'if' verifica se a variavel $displayGroup tem o valor "administrator". Se sim, ela monta o navBlock que esta dentro
+  da condicao. Se nao, ela vai para o 'else' e monta aquele navBlock sem aquela div de registro
+  */
+  if ($displayGroup == "administrator") { //Condiction to build the navBlock with the admin tab 'register'
     ?>
     <div id="navBlock">
       <div id="navHeader">MAIN MENU</div>
@@ -126,18 +131,20 @@ if (/* Work In Progress */) {
       <div id="navLog" onclick="navMan('login.php?killses=true')">LOGOUT</div>
     </div>
     <?PHP
-  }else { ?>
-      <div id="navBlock">
-        <div id="navHeader">MAIN MENU</div>
-        <div id="navHome"class="navItem" onclick="navMan('index.php')">HOME</div>
-        <div id="navStock"class="navItem" onclick="navMan('stock.php')">STOCK</div>
-        <div id="navSales" class="navItem" onclick="navMan('sales.php')">SALES</div>
-        <div class="menuSep"></div>
-        <div id="navLog" onclick="navMan('login.php?killses=true')">LOGOUT</div>
-      </div>
+  }else {      //If it does not fall under the admin condiction it builds the navBlock without the admin tab 'register'
+      ?>
+        <div id="navBlock">
+          <div id="navHeader">MAIN MENU</div>
+          <div id="navHome"class="navItem" onclick="navMan('index.php')">HOME</div>
+          <div id="navStock"class="navItem" onclick="navMan('stock.php')">STOCK</div>
+          <div id="navSales" class="navItem" onclick="navMan('sales.php')">SALES</div>
+          <div class="menuSep"></div>
+          <div id="navLog" onclick="navMan('login.php?killses=true')">LOGOUT</div>
+        </div>
       <?PHP
   }
 }
+//End of the Navigation Block function
 
 /**
  * Create an ID
