@@ -23,9 +23,15 @@
         <div class="displayPaneCaption">Search:</div>
         <div>
           <input name="txtSearch" id="txtSearch" placeholder="Search Stock"
-          style="width: calc(100% - 115px)" value="<?PHP echo $txtSearch; ?>">
-          <button type="button" id="btnSearch">Search</button>
-          <button type="button" id="btnAddRec">Add</button>
+          value="<?PHP echo $txtSearch; ?>">
+          <?php if ($displayGroup == "administrator"): ?>       <!--Condiction to use the administrator function 'add' -->
+            <button type="button" id="btnSearch">Search</button>
+            <button type="button" id="btnAddRec">Add</button>
+          <?php else: ?>                                        <!--If not an administrator, the function 'add' is hidden -->
+            <button type="button" id="btnSearch">Search</button>
+          <?php endif; ?>
+
+
         </div>
       </div>
       <input type="hidden" name="a" value="listStock">
@@ -60,21 +66,38 @@
       if($row_cnt >= 1) {
         while ($row = $result->fetch_assoc()) {
           $sid = $row['lpa_stock_ID'];
+          global $displayGroup;
+          if ($displayGroup == "administrator") {   //Condiction to allow only admins to edit
+            ?>
+            <tr class="hl">
+              <td onclick="loadStockItem(<?PHP echo $sid; ?>,'Edit')"
+                  style="cursor: pointer;border-left: #cccccc solid 1px">
+                  <?PHP echo $sid; ?>
+              </td>
+              <td onclick="loadStockItem(<?PHP echo $sid; ?>,'Edit')"
+                  style="cursor: pointer;border-left: #cccccc solid 1px">
+                  <?PHP echo $row['lpa_stock_name']; ?>
+              </td>
+              <td style="text-align: right">
+                <?PHP echo $row['lpa_stock_price']; ?>
+              </td>
+            </tr>
+        <?PHP }else{    //If not an admin, only builds the search list without editing options
           ?>
           <tr class="hl">
-            <td onclick="loadStockItem(<?PHP echo $sid; ?>,'Edit')"
-                style="cursor: pointer;border-left: #cccccc solid 1px">
-              <?PHP echo $sid; ?>
+            <td style="border-left: #cccccc solid 1px">
+                <?PHP echo $sid; ?>
             </td>
-            <td onclick="loadStockItem(<?PHP echo $sid; ?>,'Edit')"
-                style="cursor: pointer;border-left: #cccccc solid 1px">
+            <td style="border-left: #cccccc solid 1px">
                 <?PHP echo $row['lpa_stock_name']; ?>
             </td>
             <td style="text-align: right">
               <?PHP echo $row['lpa_stock_price']; ?>
             </td>
           </tr>
-        <?PHP }
+      <?PHP
+        }
+      }
       } else { ?>
         <tr>
           <td colspan="3" style="text-align: center">
