@@ -116,6 +116,18 @@ a:hover {
     float: left;
 }
 
+#btnSearch{
+		position: relative;
+}
+
+#btnAddRec{
+		position: relative;
+}
+
+#txtSearch{
+		width: calc(100% - 200px);
+}
+
 #loginFrame {
     padding: 5px;
 }
