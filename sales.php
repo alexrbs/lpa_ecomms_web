@@ -24,8 +24,12 @@
         <div>
           <input name="txtSearch" id="txtSearch" placeholder="Search Invoices"
           value="<?PHP echo $txtSearch; ?>">
-          <button type="button" id="btnSearch">Search</button>
-          <button type="button" id="btnAddRec">Add</button>
+          <?php if ($displayGroup == "administrator"): ?>       <!--Condiction to use the administrator function 'add' -->
+            <button type="button" id="btnSearch">Search</button>
+            <button type="button" id="btnAddRec">Add</button>
+          <?php else: ?>                                        <!--If not an administrator, the function 'add' is hidden -->
+            <button type="button" id="btnSearch">Search</button>
+          <?php endif; ?>
         </div>
       </div>
       <input type="hidden" name="a" value="listInvoices">
@@ -66,26 +70,48 @@
         while ($row = $result->fetch_assoc()) {
           $sid = $row['lpa_inv_no'];
           $sum += $row['lpa_inv_amount']; // sums all sales values from the search
+          global $displayGroup;
+          if ($displayGroup == "administrator") {   //Condiction to allow only admins to edit
           ?>
-          <tr class="hl">
-            <td onclick="loadClientName(<?PHP echo $sid; ?>,'Edit')"
+            <tr class="hl">
+              <td onclick="loadClientName(<?PHP echo $sid; ?>,'Edit')"
                 style="cursor: pointer;border-left: #cccccc solid 1px; padding-left: 10px">
-              <?PHP echo $sid; ?>
-            </td>
-            <td onclick="loadClientName(<?PHP echo $sid; ?>,'Edit')"
+                <?PHP echo $sid; ?>
+              </td>
+              <td onclick="loadClientName(<?PHP echo $sid; ?>,'Edit')"
                 style="cursor: pointer;border-left: #cccccc solid 1px; border-right: #cccccc solid 1px;
                 padding-left: 10px">
                 <?PHP echo $row['lpa_inv_client_name']; ?>
-            </td>
-            <td onclick="loadClientName(<?PHP echo $sid; ?>,'Edit')"
+              </td>
+              <td onclick="loadClientName(<?PHP echo $sid; ?>,'Edit')"
                 style="cursor: pointer;border-right: #cccccc solid 1px; text-align: center">
                 <?PHP echo $row['lpa_inv_date']; ?>
+              </td>
+                <td style="text-align: right; padding-right: 10px">
+                <?PHP echo $row['lpa_inv_amount']; ?>
+                </td>
+              </tr>
+          <?PHP
+        }else{    //If not an admin, only builds the search list without editing options
+          ?>
+          <tr class="hl">
+            <td style="cursor: pointer;border-left: #cccccc solid 1px; padding-left: 10px">
+              <?PHP echo $sid; ?>
             </td>
-            <td style="text-align: right; padding-right: 10px">
+            <td style="cursor: pointer;border-left: #cccccc solid 1px; border-right: #cccccc solid 1px;
+              padding-left: 10px">
+              <?PHP echo $row['lpa_inv_client_name']; ?>
+            </td>
+            <td style="cursor: pointer;border-right: #cccccc solid 1px; text-align: center">
+              <?PHP echo $row['lpa_inv_date']; ?>
+            </td>
+              <td style="text-align: right; padding-right: 10px">
               <?PHP echo $row['lpa_inv_amount']; ?>
-            </td>
-          </tr>
-        <?PHP }
+              </td>
+            </tr>
+      <?PHP
+      }
+      }
       } else { ?>
         <tr>
           <td colspan="3" style="text-align: center">
