@@ -56,11 +56,11 @@
          FROM
             lpa_invoices
          WHERE
-            lpa_inv_client_ID LIKE '%$txtSearch%'
+            lpa_inv_client_ID LIKE '%$txtSearch%' AND lpa_inv_status <> 'D'
          OR
-            lpa_inv_client_name LIKE '%$txtSearch%'
+            lpa_inv_client_name LIKE '%$txtSearch%' AND lpa_inv_status <> 'D'
          OR
-            lpa_inv_date LIKE '%$txtSearch%'
+            lpa_inv_date LIKE '%$txtSearch%' AND lpa_inv_status <> 'D'
 
          ";
       $result = $db->query($query);
@@ -150,7 +150,7 @@
       navMan("sales.php?a=listInvoices&txtSearch=" + search);
     }
     function loadClientName(ID,MODE) {
-      window.location = "stockaddedit.php?sid=" +  //Need to create the invoice edit file
+      window.location = "salesaddedit.php?sid=" +  //Call for the invoice edit file
       ID + "&a=" + MODE + "&txtSearch=" + search;
     }
     $("#btnSearch").click(function() {
