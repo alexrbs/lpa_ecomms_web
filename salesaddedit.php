@@ -117,28 +117,28 @@
     <form name="frmSalesRec" id="frmSalesRec" method="post" action="<?PHP echo $_SERVER['PHP_SELF']; ?>">
       <div>
         <div><b>Invoice Number </b></div>
-        <input name="txtInvNo" id="txtStockID" placeholder="Invoice Number" value="<?PHP echo $salesNO; ?>"
-        style="width: 100px;" title="Invoice Number">
+        <input name="txtInvNo" id="txtInvNo" placeholder="Invoice Number" value="<?PHP echo $salesNO; ?>"
+        style="width: 80px;" title="Invoice Number">
       </div>
       <div style="margin-top: <?PHP echo $fieldSpacer; ?>">
         <div><b>Date and Time</b></div>
-        <input name="txtInvDate" id="txtStockName" placeholder="Date" value="<?PHP echo $salesDate; ?>"
-        style="width: 400px;"  title="Date">
+        <input name="txtInvDate" id="txtInvDate" placeholder="Date" value="<?PHP echo $salesDate; ?>"
+        style="width: 200px;"  title="Date">
       </div>
       <div style="margin-top: <?PHP echo $fieldSpacer; ?>">
         <div><b>Client ID </b></div>
-        <textarea name="txtInvClientID" id="txtStockDesc" placeholder="Client ID" style="width: 400px;height: 80px"
-        title="Client ID"><?PHP echo $salesClientID; ?></textarea>
+        <input name="txtInvClientID" id="txtInvClientID" placeholder="Client ID"
+        title="Client ID" value="<?PHP echo $salesClientID; ?>" style="width: 200px;"  title="Client ID">
       </div>
       <div style="margin-top: <?PHP echo $fieldSpacer; ?>">
         <div><b>Client Name </b></div>
-        <input name="txtInvClientName" id="txtStockOnHand" placeholder="Client Name" value="<?PHP echo $salesClientName; ?>"
-        style="width: 90px;text-align: right"  title="Client Name">
+        <input name="txtInvClientName" id="txtInvClientName" placeholder="Client Name" value="<?PHP echo $salesClientName; ?>"
+        style="width: 200px"  title="Client Name">
       </div>
       <div style="margin-top: <?PHP echo $fieldSpacer; ?>">
         <div><b>Address </b></div>
-        <input name="txtInvClientAddress" id="txtStockPrice" placeholder="Address" value="<?PHP echo $salesClientAddress; ?>"
-        style="width: 90px;text-align: right"  title="Address">
+        <input name="txtInvClientAddress" id="txtInvClientAddress" placeholder="Address" value="<?PHP echo $salesClientAddress; ?>"
+        style="width: 200px"  title="Address">
       </div>
       <div style="margin-top: <?PHP echo $fieldSpacer; ?>">
         <div><b>Sale Status:</b></div>
