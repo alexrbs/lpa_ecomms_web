@@ -141,6 +141,11 @@
         style="width: 200px"  title="Address">
       </div>
       <div style="margin-top: <?PHP echo $fieldSpacer; ?>">
+        <div><b>Amount </b></div>
+        <input name="txtInvAmount" id="txtInvAmount" placeholder="Amount" value="<?PHP echo $salesAmount; ?>"
+        style="width: 200px"  title="Amount">
+      </div>
+      <div style="margin-top: <?PHP echo $fieldSpacer; ?>">
         <div><b>Sale Status:</b></div>
         <input name="txtStatus" id="txtSaleStatusPaid" type="radio" value="p">
           <label for="txtSaleStatusPaid">Paid</label>
