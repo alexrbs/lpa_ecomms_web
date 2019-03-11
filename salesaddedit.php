@@ -1,4 +1,6 @@
 <?PHP
+  date_default_timezone_set('Australia/Brisbane');
+  $date = date("Y-m-d H:i:s");
   $authChk = true;
   require('app-lib.php');
   isset($_REQUEST['sid'])? $sid = $_REQUEST['sid'] : $sid = "";
@@ -32,7 +34,7 @@
   }
   // lpa_inv_no	lpa_inv_date	lpa_inv_client_ID	lpa_inv_client_name	lpa_inv_client_address	lpa_inv_amount	lpa_inv_status
   isset($_POST['txtInvNo'])? $salesNO = $_POST['txtInvNo'] : $salesNO = gen_ID();
-  isset($_POST['txtInvDate'])? $salesDate = $_POST['txtInvDate'] : $salesDate = "";
+  isset($_POST['txtInvDate'])? $salesDate = $_POST['txtInvDate'] : $salesDate = $date;
   isset($_POST['txtInvClientID'])? $salesClientID = $_POST['txtInvClientID'] : $salesClientID = "";
   isset($_POST['txtInvClientName'])? $salesClientName = $_POST['txtInvClientName'] : $salesClientName = "";
   isset($_POST['txtInvClientAddress'])? $salesClientAddress = $_POST['txtInvClientAddress'] : $salesClientAddress = "";
@@ -119,11 +121,6 @@
         <div><b>Invoice Number </b></div>
         <input name="txtInvNo" id="txtInvNo" placeholder="Invoice Number" value="<?PHP echo $salesNO; ?>"
         style="width: 80px;" title="Invoice Number">
-      </div>
-      <div style="margin-top: <?PHP echo $fieldSpacer; ?>">
-        <div><b>Date and Time</b></div>
-        <input name="txtInvDate" id="txtInvDate" placeholder="Date" value="<?PHP echo $salesDate; ?>"
-        style="width: 200px;"  title="Date">
       </div>
       <div style="margin-top: <?PHP echo $fieldSpacer; ?>">
         <div><b>Client ID </b></div>
