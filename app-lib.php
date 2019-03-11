@@ -146,31 +146,16 @@ function build_navBlock() {
 }
 //End of the Navigation Block function
 
-/**
- * Create an ID
- * - Create a unique id.
- *
- * @param string $prefix
- * @param int $length
- * @param int $strength
- * @return string
- */
-function gen_ID($prefix='',$length=10, $strength=0) {
-  $final_id='';
-  for($i=0;$i< $length;$i++)
-  {
-    $final_id .= mt_rand(0,9);
-  }
-  if($strength == 1) {
-    $final_id = mt_rand(100,999).$final_id;
-  }
-  if($strength == 2) {
-    $final_id = mt_rand(10000,99999).$final_id;
-  }
-  if($strength == 4) {
-    $final_id = mt_rand(1000000,9999999).$final_id;
-  }
-  return $prefix.$final_id;
+//Generating ID from the last ID registered on the database
+function gen_ID() {
+  openDB();
+  global $db;
+  $query = "SELECT lpa_inv_no FROM lpa_invoices ORDER BY lpa_inv_no DESC LIMIT 1";
+  $result = $db->query($query);
+  $row = $result->fetch_assoc();
+  $ID = (int) $row['lpa_inv_no'];
+  return $ID + 1;
+  
 }
 
 /**
