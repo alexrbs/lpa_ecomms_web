@@ -9,6 +9,7 @@ date_default_timezone_set('Australia/Queensland');
 /**
  * Global variables
  */
+$message = "";
 
 // Database instance variable
 $db = null;
@@ -97,8 +98,6 @@ if(isset($_REQUEST['killses']) == "true") {
 }
 
 
-
-
 /**
  *  Build the page header function
  */
@@ -114,11 +113,7 @@ function build_header() {
 
 function build_navBlock() {
   global $displayGroup;
-  /*
-  Coloquei as condicoes 'if' e 'else' dentro dessa funcao que constroi o navBlock
-  O 'if' verifica se a variavel $displayGroup tem o valor "administrator". Se sim, ela monta o navBlock que esta dentro
-  da condicao. Se nao, ela vai para o 'else' e monta aquele navBlock sem aquela div de registro
-  */
+
   if ($displayGroup == "administrator") { //Condiction to build the navBlock with the admin tab 'register'
     ?>
     <div id="navBlock">
@@ -155,8 +150,20 @@ function gen_ID() {
   $row = $result->fetch_assoc();
   $ID = (int) $row['lpa_inv_no'];
   return $ID + 1;
-  
+
 }
+//End of ID Generator
+
+//Logs function
+function gen_log(){
+  $date = date("Y-m-d h:m:s");
+  $file = __FILE__;
+  $level = "warning";
+
+  $message = "[{$date}] [{$file}] [{$level}] Error!".PHP_EOL;
+  error_log($message, 3, '/home/ubuntu/Downloads/lpa_ecomms_web/log/lpalog.log');
+  }
+//End logs function
 
 /**
  *  Build the page footer function
