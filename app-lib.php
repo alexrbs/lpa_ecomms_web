@@ -102,8 +102,6 @@ if(isset($_REQUEST['killses']) == "true") {
  *  Build the page header function
  */
 function build_header() {
-  global $displayName;
-  global $displayGroup;
 
   include 'header.php';
 }
@@ -113,11 +111,14 @@ function build_header() {
 
 function build_navBlock() {
   global $displayGroup;
+  global $displayName;
 
   if ($displayGroup == "administrator") { //Condiction to build the navBlock with the admin tab 'register'
     ?>
     <div id="navBlock">
-      <div id="navHeader">MAIN MENU</div>
+      <div id="navHeader"><b>Welcome: </b><?php echo $displayName ?>
+        <br><b>Status: </b><?php echo $displayGroup ?></br> <!--added to display user privileges-->
+      </div>
       <div id="navHome"class="navItem" onclick="navMan('index.php')">HOME</div>
       <div id="navStock"class="navItem" onclick="navMan('stock.php')">STOCK</div>
       <div id="navSales" class="navItem" onclick="navMan('sales.php')">SALES</div>
