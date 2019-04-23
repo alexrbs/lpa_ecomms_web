@@ -10,11 +10,8 @@
   </head>
   <body>
     <div id="header">
-      <div style="margin-left: 10px">
+      <div style="margin-left: 15px">
         Logic Peripherals Australia
       </div>
-    </div>
-    <div style="text-align:right"><b>Welcome: </b><?php echo $displayName ?>
-      <br><b>Status: </b><?php echo $displayGroup ?></br> <!--added to display user privileges-->
     </div>
     <div style="clear: right"></div>
