@@ -2,7 +2,7 @@
 
   $authChk = true;
   require('app-lib.php');
-  build_header($displayName);
+  build_header();
 ?>
   <?PHP build_navBlock(); ?>
   <div id="content">
