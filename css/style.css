@@ -39,6 +39,42 @@ a:hover {
   border-bottom: #ff851a solid 2px;
   margin-bottom: 15px;
 }
+
+#mission{
+	position: relative;
+	width: 440px;
+	height: 150px;
+	margin-top: 5px;
+	margin-left: 5px;
+	float:left;
+}
+
+#maps{
+	position: relative;
+	width: 445px;
+	height: 360px;
+	margin-top: 5px;
+	margin-left: auto;
+	margin-right: 450px;
+	float: right;
+}
+
+#youtube{
+	position: relative;
+	width: 445px;
+	height: 360px;
+	margin-left: auto;
+	margin-right: 450px;
+	float: right;
+}
+
+#facebook{
+	position: relative;
+	width: 445px;
+	height: 360px;
+	float: left;
+}
+
 #regBut{
 	position: relative;
 	border-left: 20px;
