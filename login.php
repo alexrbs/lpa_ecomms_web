@@ -36,7 +36,8 @@
 
     if($chkLogin == false) {
       $msg = "Login failed! Please try again.";
-    }
+      gen_log();
+      }
 
   }
  build_header();

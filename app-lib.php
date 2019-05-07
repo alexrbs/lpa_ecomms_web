@@ -122,6 +122,7 @@ function build_navBlock() {
       <div id="navHome"class="navItem" onclick="navMan('index.php')">HOME</div>
       <div id="navStock"class="navItem" onclick="navMan('stock.php')">STOCK</div>
       <div id="navSales" class="navItem" onclick="navMan('sales.php')">SALES</div>
+      <div id="navShop" class="navItem" onclick="navMan('shop.php')">SHOP</div>
       <div id="navReg" class="navItem" onclick="navMan('reg.php')">REGISTER</div>
       <div class="menuSep"></div>
       <div id="navLog" onclick="navMan('login.php?killses=true')">LOGOUT</div>
@@ -130,10 +131,13 @@ function build_navBlock() {
   }else {      //If it does not fall under the admin condiction it builds the navBlock without the admin tab 'register'
       ?>
         <div id="navBlock">
-          <div id="navHeader">MAIN MENU</div>
+          <div id="navHeader"><b>Welcome: </b><?php echo $displayName ?>
+            <br><b>Status: </b><?php echo $displayGroup ?></br> <!--added to display user privileges-->
+          </div>
           <div id="navHome"class="navItem" onclick="navMan('index.php')">HOME</div>
           <div id="navStock"class="navItem" onclick="navMan('stock.php')">STOCK</div>
           <div id="navSales" class="navItem" onclick="navMan('sales.php')">SALES</div>
+          <div id="navShop" class="navItem" onclick="navMan('shop.php')">SHOP</div>
           <div class="menuSep"></div>
           <div id="navLog" onclick="navMan('login.php?killses=true')">LOGOUT</div>
         </div>
@@ -162,7 +166,7 @@ function gen_log(){
   $level = "warning";
 
   $message = "[{$date}] [{$file}] [{$level}] Error!".PHP_EOL;
-  error_log($message, 3, '/home/ubuntu/Downloads/lpa_ecomms_web/log/lpalog.log');
+  error_log($message, 3, '/home/alexander/github/lpa_ecomms_web/log/lpalog.log');
   }
 //End logs function
 
