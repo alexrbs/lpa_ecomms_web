@@ -15,6 +15,7 @@ a:hover {
 	font-weight:bold;
 	text-decoration:underline;
 }
+
 #header {
 	position:relative;
 	width: 100%;
@@ -23,14 +24,17 @@ a:hover {
 	color: #FFF;
 	text-shadow: 3px 3px 3px #000;
 	font: bold 22px/70px Verdana, Geneva, sans-serif;
-	text-align:left;
+	text-align: center;
 	background: #1e5799; /* Old browsers */
 	/*border-radius: 10px;*/
+}
 
-}
 #content {
-	padding: 10px 5px 10px 210px;
+		height: 100%;
+    width: 60%;
+    margin: auto;
 }
+
 .PageTitle {
   position: relative;
   font: bold 1.2em arial;
@@ -39,6 +43,45 @@ a:hover {
   border-bottom: #ff851a solid 2px;
   margin-bottom: 15px;
 }
+
+#mainIndex{
+	position: relative;
+	margin: auto;
+	height: 100%;
+	width: 60%;
+	overflow: auto;
+}
+
+.mashup{
+	position: relative;
+	margin-top: 15px;
+
+}
+
+#miss{
+	float: left;
+	height: 160px;
+	width: 315px;
+	text-align: justify;
+}
+
+#gmaps{
+	text-align: right;
+	border: 2px solid #777777;
+  border-left: 2px solid #777777;
+  border-right: 2px solid #777777;
+  border-bottom: 2px solid #777777;
+}
+
+#youtube{
+	float: left;
+
+}
+
+#facebook{
+	text-align: right;
+}
+
 #regBut{
 	position: relative;
 	border-left: 20px;
@@ -46,18 +89,15 @@ a:hover {
 }
 
 #navBlock {
-    position: relative;
-    /*margin-top: 10px;*/
-    float: left;
+    position: absolute;
     width: 200px;
     /*border: 1px solid #777777;*/
 		border-left: 2px solid #777777;
     border-right: 2px solid #777777;
     border-bottom: 2px solid #777777;
-    margin-right: 10px;
-    /*height: 250px;*/
     background-color: #FFFFFF;
 }
+
 #navHeader {
     position: relative;
     /*height: 30px;*/
@@ -157,7 +197,6 @@ a:hover {
     border: #777777 solid 1px;
     overflow: hidden;
 }
-
 .productListItemImageFrame {
     position: relative;
     float: left;
@@ -167,7 +206,6 @@ a:hover {
     width: 150px;
     background-size: contain;
 }
-
 .prodTitle {
     position: relative;
     margin: 5px 0 2px 157px;
@@ -209,7 +247,6 @@ a:hover {
     width: 50px;
     text-align: center;
 }
-
 .prodAddToCart {
     float: right;
 }
@@ -240,9 +277,11 @@ a:hover {
   background: linear-gradient(to bottom,  rgba(245,246,246,1) 0%,rgba(219,220,226,1) 21%,rgba(184,186,198,1) 49%,rgba(221,223,227,1) 80%,rgba(245,246,246,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f6f6', endColorstr='#f5f6f6',GradientType=0 );
 }
+
 #contentLogin input {
   width: calc(100% - 5px);
 }
+
 #contentLogin .titleBar {
   position: relative;
   height: 30px;
