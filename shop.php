@@ -11,9 +11,12 @@
   }
   build_header();
 ?>
-  <?PHP build_navBlock(); ?>
-  <div id="content">
 
+  <div id="content">
+    <?PHP build_navBlock(); ?>
+    <div id="mainC">
+
+    </div>
   </div>
 <?PHP
 build_footer();

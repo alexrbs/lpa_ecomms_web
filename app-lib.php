@@ -10,6 +10,7 @@ date_default_timezone_set('Australia/Queensland');
  * Global variables
  */
 $message = "";
+$page = 0;
 
 // Database instance variable
 $db = null;
@@ -102,8 +103,8 @@ if(isset($_REQUEST['killses']) == "true") {
  *  Build the page header function
  */
 function build_header() {
-
   include 'header.php';
+
 }
 
 
@@ -120,6 +121,7 @@ function build_navBlock() {
         <br><b>Status: </b><?php echo $displayGroup ?></br> <!--added to display user privileges-->
       </div>
       <div id="navHome"class="navItem" onclick="navMan('index.php')">HOME</div>
+      <div id="navAbout"class="navItem" onclick="navMan('about.php')">ABOUT</div>
       <div id="navStock"class="navItem" onclick="navMan('stock.php')">STOCK</div>
       <div id="navSales" class="navItem" onclick="navMan('sales.php')">SALES</div>
       <div id="navShop" class="navItem" onclick="navMan('shop.php')">SHOP</div>
@@ -135,6 +137,7 @@ function build_navBlock() {
             <br><b>Status: </b><?php echo $displayGroup ?></br> <!--added to display user privileges-->
           </div>
           <div id="navHome"class="navItem" onclick="navMan('index.php')">HOME</div>
+          <div id="navAbout"class="navItem" onclick="navMan('about.php')">ABOUT</div>
           <div id="navStock"class="navItem" onclick="navMan('stock.php')">STOCK</div>
           <div id="navSales" class="navItem" onclick="navMan('sales.php')">SALES</div>
           <div id="navShop" class="navItem" onclick="navMan('shop.php')">SHOP</div>

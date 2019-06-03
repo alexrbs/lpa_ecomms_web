@@ -24,15 +24,26 @@ a:hover {
 	color: #FFF;
 	text-shadow: 3px 3px 3px #000;
 	font: bold 22px/70px Verdana, Geneva, sans-serif;
-	text-align: center;
+	text-align: left;
 	background: #1e5799; /* Old browsers */
 	/*border-radius: 10px;*/
 }
 
+#headerA{
+	position:relative;
+	width: 100%;
+	height:70px;
+	border-bottom: #777777 solid 2px;
+	color: #FFF;
+	text-shadow: 3px 3px 3px #000;
+	font: bold 22px/70px Verdana, Geneva, sans-serif;
+	text-align: left;
+	background: red;
+}
+
 #content {
 		height: 100%;
-    width: 60%;
-    margin: auto;
+    width: 100%;
 }
 
 .PageTitle {
@@ -44,42 +55,55 @@ a:hover {
   margin-bottom: 15px;
 }
 
-#mainIndex{
+#mainC{
 	position: relative;
-	margin: auto;
-	height: 100%;
-	width: 60%;
+	margin-left: 215px;
 	overflow: auto;
 }
 
 .mashup{
 	position: relative;
-	margin-top: 15px;
-
-}
-
-#miss{
-	float: left;
-	height: 160px;
-	width: 315px;
-	text-align: justify;
-}
-
-#gmaps{
-	text-align: right;
+	margin-top: 10px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 7px;
+	padding-bottom: 2px;
 	border: 2px solid #777777;
   border-left: 2px solid #777777;
   border-right: 2px solid #777777;
   border-bottom: 2px solid #777777;
 }
 
-#youtube{
+#miss{
 	float: left;
+	height: 165px;
+	width: 600px;
+	text-align: justify;
+	background: #dcdcdc;
+}
 
+#gmaps{
+	text-align: center;
+	height: 165px;
+	width: 410px;
+	margin-left: 620px;
+	background: #d0c1ff;
+}
+
+#youtube{
+	text-align: center;
+	float: left;
+	width: 495px;
+	height: 320px;
+	background: #9cb7ff;
 }
 
 #facebook{
-	text-align: right;
+	width: 508px;
+  height: 320px;
+	margin-left: 515px;
+	background: #c3ffff;
+	padding-left: 9px;
 }
 
 #regBut{

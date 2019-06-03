@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php global $page; ?>
 <html>
   <head>
     <title>Interface</title>
@@ -9,9 +10,18 @@
     <script src="js/script.js" type="text/javascript"></script>
   </head>
   <body>
-    <div id="header">
+    <?php if($page == 1){?>
+    <div id="headerA">
       <div style="margin-left: 15px">
         Logic Peripherals Australia
       </div>
     </div>
+    <?php }else{ ?>
+      <div id="header">
+        <div style="margin-left: 15px">
+          Logic Peripherals Australia
+        </div>
+      </div>
+    <?php } ?>
     <div style="clear: right"></div>
+  </body>

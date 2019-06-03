@@ -11,104 +11,107 @@
   }
   build_header($displayName);
 ?>
-  <?PHP build_navBlock(); ?>
+
   <div id="content">
-    <div class="PageTitle">Stock Management Search</div>
+    <?PHP build_navBlock(); ?>
+    <div id="mainC">
+      <div class="PageTitle">Stock Management Search</div>
 
-  <!-- Search Section Start -->
-    <form name="frmSearchStock" method="post"
-          id="frmSearchStock"
-          action="<?PHP echo $_SERVER['PHP_SELF']; ?>">
-      <div class="displayPane">
-        <div class="displayPaneCaption">Search:</div>
-        <div>
-          <input name="txtSearch" id="txtSearch" placeholder="Search Stock"
-          value="<?PHP echo $txtSearch; ?>">
-          <?php if ($displayGroup == "administrator"): ?>       <!--Condiction to use the administrator function 'add' -->
-            <button type="button" id="btnSearch">Search</button>
-            <button type="button" id="btnAddRec">Add</button>
-          <?php else: ?>                                        <!--If not an administrator, the function 'add' is hidden -->
-            <button type="button" id="btnSearch">Search</button>
-          <?php endif; ?>
+    <!-- Search Section Start -->
+      <form name="frmSearchStock" method="post"
+            id="frmSearchStock"
+            action="<?PHP echo $_SERVER['PHP_SELF']; ?>">
+        <div class="displayPane">
+          <div class="displayPaneCaption">Search:</div>
+          <div>
+            <input name="txtSearch" id="txtSearch" placeholder="Search Stock"
+            value="<?PHP echo $txtSearch; ?>">
+            <?php if ($displayGroup == "administrator"): ?>       <!--Condiction to use the administrator function 'add' -->
+              <button type="button" id="btnSearch">Search</button>
+              <button type="button" id="btnAddRec">Add</button>
+            <?php else: ?>                                        <!--If not an administrator, the function 'add' is hidden -->
+              <button type="button" id="btnSearch">Search</button>
+            <?php endif; ?>
 
 
+          </div>
         </div>
-      </div>
-      <input type="hidden" name="a" value="listStock">
-    </form>
-    <!-- Search Section End -->
-    <!-- Search Section List Start -->
-    <?PHP
-      if($action == "listStock") {
-    ?>
-    <div>
-      <table style="width: calc(100% - 15px);border: #cccccc solid 1px; margin-top: 5px">
-        <tr style="background: #eeeeee">
-          <td style="width: 80px;border-left: #cccccc solid 1px"><b>Stock Code</b></td>
-          <td style="border-left: #cccccc solid 1px"><b>Stock Name</b></td>
-          <td style="width: 80px;text-align: right"><b>Price</b></td>
-        </tr>
-    <?PHP
-      openDB();
-      $query =
-        "SELECT
-            *
-         FROM
-            lpa_stock
-         WHERE
-            lpa_stock_ID LIKE '%$txtSearch%' AND lpa_stock_status <> 'D'
-         OR
-            lpa_stock_name LIKE '%$txtSearch%' AND lpa_stock_status <> 'D'
+        <input type="hidden" name="a" value="listStock">
+      </form>
+      <!-- Search Section End -->
+      <!-- Search Section List Start -->
+      <?PHP
+        if($action == "listStock") {
+      ?>
+      <div>
+        <table style="width: calc(100% - 15px);border: #cccccc solid 1px; margin-top: 5px">
+          <tr style="background: #eeeeee">
+            <td style="width: 80px;border-left: #cccccc solid 1px"><b>Stock Code</b></td>
+            <td style="border-left: #cccccc solid 1px"><b>Stock Name</b></td>
+            <td style="width: 80px;text-align: right"><b>Price</b></td>
+          </tr>
+      <?PHP
+        openDB();
+        $query =
+          "SELECT
+              *
+           FROM
+              lpa_stock
+           WHERE
+              lpa_stock_ID LIKE '%$txtSearch%' AND lpa_stock_status <> 'D'
+           OR
+              lpa_stock_name LIKE '%$txtSearch%' AND lpa_stock_status <> 'D'
 
-         ";
-      $result = $db->query($query);
-      $row_cnt = $result->num_rows;
-      if($row_cnt >= 1) {
-        while ($row = $result->fetch_assoc()) {
-          $sid = $row['lpa_stock_ID'];
-          global $displayGroup;
-          if ($displayGroup == "administrator") {   //Condiction to allow only admins to edit
+           ";
+        $result = $db->query($query);
+        $row_cnt = $result->num_rows;
+        if($row_cnt >= 1) {
+          while ($row = $result->fetch_assoc()) {
+            $sid = $row['lpa_stock_ID'];
+            global $displayGroup;
+            if ($displayGroup == "administrator") {   //Condiction to allow only admins to edit
+              ?>
+              <tr class="hl">
+                <td onclick="loadStockItem(<?PHP echo $sid; ?>,'Edit')"
+                    style="cursor: pointer;border-left: #cccccc solid 1px">
+                    <?PHP echo $sid; ?>
+                </td>
+                <td onclick="loadStockItem(<?PHP echo $sid; ?>,'Edit')"
+                    style="cursor: pointer;border-left: #cccccc solid 1px">
+                    <?PHP echo $row['lpa_stock_name']; ?>
+                </td>
+                <td style="text-align: right">
+                  <?PHP echo $row['lpa_stock_price']; ?>
+                </td>
+              </tr>
+          <?PHP }else{    //If not an admin, only builds the search list without editing options
             ?>
             <tr class="hl">
-              <td onclick="loadStockItem(<?PHP echo $sid; ?>,'Edit')"
-                  style="cursor: pointer;border-left: #cccccc solid 1px">
+              <td style="border-left: #cccccc solid 1px">
                   <?PHP echo $sid; ?>
               </td>
-              <td onclick="loadStockItem(<?PHP echo $sid; ?>,'Edit')"
-                  style="cursor: pointer;border-left: #cccccc solid 1px">
+              <td style="border-left: #cccccc solid 1px">
                   <?PHP echo $row['lpa_stock_name']; ?>
               </td>
               <td style="text-align: right">
                 <?PHP echo $row['lpa_stock_price']; ?>
               </td>
             </tr>
-        <?PHP }else{    //If not an admin, only builds the search list without editing options
-          ?>
-          <tr class="hl">
-            <td style="border-left: #cccccc solid 1px">
-                <?PHP echo $sid; ?>
-            </td>
-            <td style="border-left: #cccccc solid 1px">
-                <?PHP echo $row['lpa_stock_name']; ?>
-            </td>
-            <td style="text-align: right">
-              <?PHP echo $row['lpa_stock_price']; ?>
+        <?PHP
+          }
+        }
+        } else { ?>
+          <tr>
+            <td colspan="3" style="text-align: center">
+              No Records Found for: <b><?PHP echo $txtSearch; ?></b>
             </td>
           </tr>
-      <?PHP
-        }
-      }
-      } else { ?>
-        <tr>
-          <td colspan="3" style="text-align: center">
-            No Records Found for: <b><?PHP echo $txtSearch; ?></b>
-          </td>
-        </tr>
+        <?PHP } ?>
+        </table>
+      </div>
       <?PHP } ?>
-      </table>
+      <!-- Search Section List End -->
     </div>
-    <?PHP } ?>
-    <!-- Search Section List End -->
   </div>
   <script>
     var action = "<?PHP echo $action; ?>";
