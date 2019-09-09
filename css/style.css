@@ -108,8 +108,8 @@ a:hover {
 
 #regBut{
 	position: relative;
-	border-left: 20px;
-	border-top: 2px;
+	text-align: center;
+	margin-top: 10px;
 }
 
 #navBlock {
@@ -303,7 +303,7 @@ a:hover {
 }
 
 #contentLogin input {
-  width: calc(100% - 5px);
+  width: calc(95%);
 }
 
 #contentLogin .titleBar {

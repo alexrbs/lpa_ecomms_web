@@ -8,7 +8,41 @@
       $uName = $_POST['fldUsername'] : $uName = "";
     isset($_POST['fldPassword'])?
       $uPassword = $_POST['fldPassword'] : $uPassword = "";
+      $hashedPassword = hash("sha512", $uPassword);
+    //Hashed login
+    openDB();
+    $query =
+      "
+      SELECT
+        lpa_user_ID,
+        lpa_user_username,
+        lpa_user_password
+      FROM
+        lpa_users
+      WHERE
+        lpa_user_username = '$uName'
+      AND
+        lpa_user_password = '$hashedPassword'
+      LIMIT 1
+      ";
+    $result = $db->query($query);
+    $row = $result->fetch_assoc();
+    if($row['lpa_user_username'] == $uName) {
+      if($row['lpa_user_password'] == $hashedPassword) {
+        $_SESSION['authUser'] = $row['lpa_user_ID'];
+        if(!empty($_SESSION['authUser'])){
+          header("Location: index.php");
+          exit;
+        }
+      }
+    }
 
+    if($chkLogin == false) {
+      $msg = "Login failed! Please try again.";
+      gen_log();
+      }
+
+    //Non hashed login
     openDB();
     $query =
       "
@@ -29,8 +63,10 @@
     if($row['lpa_user_username'] == $uName) {
       if($row['lpa_user_password'] == $uPassword) {
         $_SESSION['authUser'] = $row['lpa_user_ID'];
-        header("Location: index.php");
-        exit;
+        if(!empty($_SESSION['authUser'])){
+          header("Location: index.php");
+          exit;
+        }
       }
     }
 
@@ -38,7 +74,6 @@
       $msg = "Login failed! Please try again.";
       gen_log();
       }
-
   }
  build_header();
 ?>
@@ -53,6 +88,7 @@
         <input type="password" name="fldPassword" id="fldPassword">
         <div class="buttonBar">
           <button type="button" onclick="do_login()">Login</button>
+          <button type="button" onclick="navMan('reg.php')">Register</button>
         </div>
       </div>
       <input type="hidden" name="a" value="doLogin">

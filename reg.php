@@ -1,56 +1,40 @@
 <?PHP
-  $authChk = true;
   require('app-lib.php');
   isset($_POST['a'])? $action = $_POST['a'] : $action = "";
   if(!$action) {
     isset($_REQUEST['a'])? $action = $_REQUEST['a'] : $action = "";
   }
-  isset($_POST['txtSearch'])? $txtSearch = $_POST['txtSearch'] : $txtSearch = "";
-  if(!$txtSearch) {
-    isset($_REQUEST['txtSearch'])? $txtSearch = $_REQUEST['txtSearch'] : $txtSearch = "";
-  }
   build_header($displayName);
 ?>
 
   <div id="content">
-    <?PHP build_navBlock(); ?>
-    <div id="mainC">
+    <?PHP // build_navBlock(); ?>
+    <div style="margin-right: 40%; margin-left: 40%">
       <div class="PageTitle">New Customer Registration</div>
-      <div>
-        <b>First Name: </b>
-        <input name="fldfirstName" id="fldfirstName" style="width: 200px; margin-left: 52px">
-      </div>
-      <div>
-        <b>Last Name: </b>
-        <input name="fldlastName" id="fldlastName" style="width: 200px; margin-left: 53px">
-      </div>
-      <div>
-        <b>User Address: </b>
-        <input name="flduserAddress" id="flduserAddress" style="width: 200px; margin-left: 35px">
-      </div>
-      <div>
-        <b>Phone Number: </b>
-        <input name="fldphoneNum" id="fldphoneNum" style="width: 200px; margin-left: 27px">
-      </div>
-      <div>
-        <b>User Name: </b>
-        <input name="flduserName" id="flduserName" style="width: 200px; margin-left: 51px">
-      </div>
-      <div>
-        <b>User Password: </b>
-        <input name="flduserPass" id="flduserPass" style="width: 200px; margin-left: 25px">
-      </div>
-      <div>
-        <b>Confirm Password: </b>
-        <input name="fldconfPass" id="fldconfPass" style="width: 200px; margin-left: 4px">
-      </div>
-      <div>
+      <div style="float: left; line-height: 30px">
+        <b>First Name: </b><br>
+        <b>Last Name: </b><br>
+        <b>User Address: </b><br>
+        <b>Phone Number: </b><br>
+        <b>User Name: </b><br>
+        <b>User Password: </b><br>
+        <b>Confirm Password: </b><br>
         <b>User Group: </b>
-        <input name="flduserGroup" id="flduserGroup" style="width: 200px; margin-left: 48px">
+
+      </div>
+      <div style="text-align: right">
+        <input name="fldfirstName" id="fldfirstName" style="width: 200px">
+        <input name="fldlastName" id="fldlastName" style="width: 200px">
+        <input name="flduserAddress" id="flduserAddress" style="width: 200px">
+        <input name="fldphoneNum" id="fldphoneNum" style="width: 200px">
+        <input name="flduserName" id="flduserName" style="width: 200px">
+        <input name="flduserPass" id="flduserPass" style="width: 200px">
+        <input name="fldconfPass" id="fldconfPass" style="width: 200px">
+        <input name="flduserGroup" id="flduserGroup" style="width: 200px">
       </div>
       <div id="regBut">
         <button type="button" id="btnReg">REGISTER</button>
-        <button type="button" id="btnCancel">CANCEL</button>
+        <button type="button" id="btnCancel" onclick="navMan('login.php')">CANCEL</button>
       </div>
     </div>
   </div>
