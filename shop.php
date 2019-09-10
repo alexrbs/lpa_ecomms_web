@@ -38,7 +38,7 @@
             lpa_stock_name ASC
           ";
           $result = $db->query($query);
-
+          $cicle = 0;
           while ($row = $result->fetch_assoc()) {
             if ($row['lpa_stock_image']) {
               $prodImage = $row['lpa_stock_image'];
@@ -47,34 +47,38 @@
             }
             $prodID = $row['lpa_stock_ID'];
           ?>
-          <div class="productListItem">
-            <div
-              class="productListItemImageFrame"
-              style="background: url('images/<?PHP echo $prodImage; ?>') no-repeat center center;">
-            </div>
-            <div class="prodTitle"><?PHP echo $row['lpa_stock_name']; ?></div>
-            <div class="prodDesc"><?PHP echo $row['lpa_stock_desc']; ?></div>
-            <div class="prodOptionsFrame">
-              <div class="prodPriceQty">
-                <div class="prodPrice">$<?PHP echo $row['lpa_stock_price']; ?></div>
-                <div class="prodQty">QTY:</div>
-                <div class="prodQtyFld">
-                  <input
-                    name="fldQTY-<?PHP echo $prodID; ?>"
-                    id="fldQTY-<?PHP echo $prodID; ?>"
-                    type="number"
-                    value="1">
+          <?PHP if ($cicle <= 11){ ?>
+            <div id="prod<?PHP echo $cicle?>" class="productListItem">
+              <div class="productListItemImageFrame"
+                style="background: url('images/<?PHP echo $prodImage; ?>') no-repeat center center;">
+              </div>
+              <div class="prodTitle"><?PHP echo $row['lpa_stock_name']; ?></div>
+              <div class="prodDesc"><?PHP echo $row['lpa_stock_desc']; ?></div>
+              <div class="prodOptionsFrame">
+                <div class="prodPriceQty">
+                  <div class="prodPrice">$<?PHP echo $row['lpa_stock_price']; ?></div>
+                  <div class="prodQty">QTY:</div>
+                  <div class="prodQtyFld">
+                    <input
+                      name="fldQTY-<?PHP echo $prodID; ?>"
+                      id="fldQTY-<?PHP echo $prodID; ?>"
+                      type="number"
+                      value="1">
+                  </div>
+                </div>
+                <div class="prodAddToCart">
+                  <button
+                    type="button"
+                    onclick="addToCart('<?PHP echo $prodID; ?>')">
+                    Add To Cart
+                  </button>
                 </div>
               </div>
-              <div class="prodAddToCart">
-                <button
-                  type="button"
-                  onclick="addToCart('<?PHP echo $prodID; ?>')">
-                  Add To Cart
-                </button>
-              </div>
             </div>
-          </div>
+                <?PHP
+                  $cicle ++;
+                  }
+                  ?>
         <?PHP }?>
         </div>
       </div>
