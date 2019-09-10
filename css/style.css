@@ -216,11 +216,13 @@ a:hover {
     border: #AAAAAA solid 1px;
 }
 .productListItem {
-    position: relative;
-    margin-top: 10px;
-    height: 200px;
-		width: 345px;
-    border: #777777 solid 1px;
+	position: relative;
+	margin-top: 10px;
+	height: 200px;
+	width: 345px;
+	border: #777777 solid 1px;
+	float: left;
+	margin-left: 45px;
 }
 .productListItemImageFrame {
     position: relative;
