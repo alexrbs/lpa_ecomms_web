@@ -217,9 +217,9 @@ a:hover {
 .productListItem {
     position: relative;
     margin-top: 10px;
-    height: 160px;
+    height: 195px;
+		width: 345px;
     border: #777777 solid 1px;
-    overflow: hidden;
 }
 .productListItemImageFrame {
     position: relative;
@@ -232,26 +232,26 @@ a:hover {
 }
 .prodTitle {
     position: relative;
-    margin: 5px 0 2px 157px;
-    font: bold 18px/25px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    margin: 5px 2px 0px 160px;
+    font: bold 15px "Trebuchet MS", Arial, Helvetica, sans-serif;
     color: #202f40;
     height: 25px;
-    border-bottom: #777777 solid 1px;
-    padding: 0 0 2px 5px;
+    border: #777777 solid 1px;
+    padding: 0px 0px 2px 5px;
     background: #EEEEEE;
+    /*! text-align: start; */
 }
 .prodDesc {
-    position: relative;
-    margin: 5px 5px 0 160px;
-    height: 82px;
+		position: relative;
+		margin: 5px 5px 0 160px;
+		height: 125px;
 }
 .prodOptionsFrame {
-    position: relative;
-    margin: 5px 0 0 157px;
-    border-top: #777777 solid 1px;
-    height: 28px;
-    padding: 3px 5px 0 10px;
-    background: #CCCCCC;
+		position: relative;
+		border-top: #777777 solid 1px;
+		height: 27px;
+		padding: 3px 5px 0 10px;
+		background: #CCCCCC;
 }
 .prodOptionsFrame div {
     display: inline-block;
@@ -276,7 +276,8 @@ a:hover {
 }
 
 #footer {
-	position: absolute;
+	background-color: white;
+	position: fixed;
 	bottom: 0px;
 	left:0px;
 	width: 100%;
