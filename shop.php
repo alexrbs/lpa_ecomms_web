@@ -74,7 +74,6 @@
                 </button>
               </div>
             </div>
-            <div style="clear: left"></div>
           </div>
         <?PHP }?>
         </div>
