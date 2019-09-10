@@ -115,50 +115,52 @@
 ?>
 
   <div id="content">
-    <div class="PageTitle">Invoice and Sales Record Management (<?PHP echo $action; ?>)</div>
-    <form name="frmSalesRec" id="frmSalesRec" method="post" action="<?PHP echo $_SERVER['PHP_SELF']; ?>">
-      <div>
-        <div><b>Invoice Number </b></div>
-        <input name="txtInvNo" id="txtInvNo" placeholder="Invoice Number" value="<?PHP echo $salesNO; ?>"
-        style="width: 80px;" title="Invoice Number">
+    <div id="mainC">
+      <div class="PageTitle">Invoice and Sales Record Management (<?PHP echo $action; ?>)</div>
+      <form name="frmSalesRec" id="frmSalesRec" method="post" action="<?PHP echo $_SERVER['PHP_SELF']; ?>">
+        <div>
+          <div><b>Invoice Number </b></div>
+          <input name="txtInvNo" id="txtInvNo" placeholder="Invoice Number" value="<?PHP echo $salesNO; ?>"
+          style="width: 80px;" title="Invoice Number">
+        </div>
+        <div style="margin-top: <?PHP echo $fieldSpacer; ?>">
+          <div><b>Client ID </b></div>
+          <input name="txtInvClientID" id="txtInvClientID" placeholder="Client ID"
+          title="Client ID" value="<?PHP echo $salesClientID; ?>" style="width: 200px;"  title="Client ID">
+        </div>
+        <div style="margin-top: <?PHP echo $fieldSpacer; ?>">
+          <div><b>Client Name </b></div>
+          <input name="txtInvClientName" id="txtInvClientName" placeholder="Client Name" value="<?PHP echo $salesClientName; ?>"
+          style="width: 200px"  title="Client Name">
+        </div>
+        <div style="margin-top: <?PHP echo $fieldSpacer; ?>">
+          <div><b>Address </b></div>
+          <input name="txtInvClientAddress" id="txtInvClientAddress" placeholder="Address" value="<?PHP echo $salesClientAddress; ?>"
+          style="width: 200px"  title="Address">
+        </div>
+        <div style="margin-top: <?PHP echo $fieldSpacer; ?>">
+          <div><b>Amount </b></div>
+          <input name="txtInvAmount" id="txtInvAmount" placeholder="Amount" value="<?PHP echo $salesAmount; ?>"
+          style="width: 200px"  title="Amount">
+        </div>
+        <div style="margin-top: <?PHP echo $fieldSpacer; ?>">
+          <div><b>Sale Status:</b></div>
+          <input name="txtStatus" id="txtSaleStatusPaid" type="radio" value="p">
+            <label for="txtSaleStatusPaid">Paid</label>
+          <input name="txtStatus" id="txtSalesStatusUnpaid" type="radio" value="u">
+            <label for="txtSalesStatusUnpaid">Unpaid</label>
+        </div>
+        <input name="a" id="a" value="<?PHP echo $mode; ?>" type="hidden">
+        <input name="sid" id="sid" value="<?PHP echo $sid; ?>" type="hidden">
+        <input name="txtSearch" id="txtSearch" value="<?PHP echo $txtSearch; ?>" type="hidden">
+      </form>
+      <div class="optBar">
+        <button type="button" id="btnSalesSave">Save</button>
+        <button type="button" onclick="navMan('sales.php')">Close</button>
+        <?PHP if($action == "Edit") { ?>
+        <button type="button" onclick="delRec('<?PHP echo $sid; ?>')" style="color: darkred; margin-left: 20px">DELETE</button>
+        <?PHP } ?>
       </div>
-      <div style="margin-top: <?PHP echo $fieldSpacer; ?>">
-        <div><b>Client ID </b></div>
-        <input name="txtInvClientID" id="txtInvClientID" placeholder="Client ID"
-        title="Client ID" value="<?PHP echo $salesClientID; ?>" style="width: 200px;"  title="Client ID">
-      </div>
-      <div style="margin-top: <?PHP echo $fieldSpacer; ?>">
-        <div><b>Client Name </b></div>
-        <input name="txtInvClientName" id="txtInvClientName" placeholder="Client Name" value="<?PHP echo $salesClientName; ?>"
-        style="width: 200px"  title="Client Name">
-      </div>
-      <div style="margin-top: <?PHP echo $fieldSpacer; ?>">
-        <div><b>Address </b></div>
-        <input name="txtInvClientAddress" id="txtInvClientAddress" placeholder="Address" value="<?PHP echo $salesClientAddress; ?>"
-        style="width: 200px"  title="Address">
-      </div>
-      <div style="margin-top: <?PHP echo $fieldSpacer; ?>">
-        <div><b>Amount </b></div>
-        <input name="txtInvAmount" id="txtInvAmount" placeholder="Amount" value="<?PHP echo $salesAmount; ?>"
-        style="width: 200px"  title="Amount">
-      </div>
-      <div style="margin-top: <?PHP echo $fieldSpacer; ?>">
-        <div><b>Sale Status:</b></div>
-        <input name="txtStatus" id="txtSaleStatusPaid" type="radio" value="p">
-          <label for="txtSaleStatusPaid">Paid</label>
-        <input name="txtStatus" id="txtSalesStatusUnpaid" type="radio" value="u">
-          <label for="txtSalesStatusUnpaid">Unpaid</label>
-      </div>
-      <input name="a" id="a" value="<?PHP echo $mode; ?>" type="hidden">
-      <input name="sid" id="sid" value="<?PHP echo $sid; ?>" type="hidden">
-      <input name="txtSearch" id="txtSearch" value="<?PHP echo $txtSearch; ?>" type="hidden">
-    </form>
-    <div class="optBar">
-      <button type="button" id="btnSalesSave">Save</button>
-      <button type="button" onclick="navMan('sales.php')">Close</button>
-      <?PHP if($action == "Edit") { ?>
-      <button type="button" onclick="delRec('<?PHP echo $sid; ?>')" style="color: darkred; margin-left: 20px">DELETE</button>
-      <?PHP } ?>
     </div>
   </div>
   <script>
