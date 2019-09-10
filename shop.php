@@ -85,7 +85,4 @@
         window.location = URL;
       }
     </script>
-
-      <?PHP
-        build_footer();
-      ?>
+    <?PHP build_footer(); ?>
