@@ -113,6 +113,7 @@
 ?>
 
   <div id="content">
+    <div id="mainC">
     <div class="PageTitle">Stock Record Management (<?PHP echo $action; ?>)</div>
     <form name="frmStockRec" id="frmStockRec" method="post" action="<?PHP echo $_SERVER['PHP_SELF']; ?>">
       <div>
@@ -158,6 +159,7 @@
       <button type="button" onclick="delRec('<?PHP echo $sid; ?>')" style="color: darkred; margin-left: 20px">DELETE</button>
       <?PHP } ?>
     </div>
+  </div>
   </div>
   <script>
     var stockRecStatus = "<?PHP echo $stockStatus; ?>";
