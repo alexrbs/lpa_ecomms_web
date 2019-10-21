@@ -1,11 +1,42 @@
- 
-[2019-04-29 12:04:34] [/home/alexander/github/lpa_ecomms_web/app-lib.php] [warning] Error!
-[2019-04-29 12:04:57] [/home/alexander/github/lpa_ecomms_web/app-lib.php] [warning] Error!
-[2019-09-10 09:09:16] [/home/alexander/github/lpa_ecomms_web/app-lib.php] [warning] Error!
-[2019-09-10 09:09:16] [/home/alexander/github/lpa_ecomms_web/app-lib.php] [warning] Error!
-[2019-09-10 09:09:19] [/home/alexander/github/lpa_ecomms_web/app-lib.php] [warning] Error!
-[2019-09-10 09:09:19] [/home/alexander/github/lpa_ecomms_web/app-lib.php] [warning] Error!
-[2019-09-10 09:09:22] [/home/alexander/github/lpa_ecomms_web/app-lib.php] [warning] Error!
-[2019-09-10 09:09:22] [/home/alexander/github/lpa_ecomms_web/app-lib.php] [warning] Error!
-[2019-09-10 09:09:05] [/home/alexander/github/lpa_ecomms_web/app-lib.php] [warning] Error!
-[2019-09-10 11:09:56] [/home/alexander/github/lpa_ecomms_web/app-lib.php] [warning] Error!
+LOG - IP address:127.0.0.1_September 23,2019,12:06 pm
+User: - Action:Login failed! Please try again.
+----------------------
+LOG - IP address:127.0.0.1_September 23,2019,12:06 pm
+User: - Action:Login failed! Please try again.
+----------------------
+LOG - IP address:127.0.0.1_September 23,2019,12:06 pm
+User: asdf- Action:Login failed! Please try again.
+----------------------
+LOG - IP address:127.0.0.1_September 23,2019,12:06 pm
+User: asdf- Action:Login failed! Please try again.
+----------------------
+LOG - IP address:127.0.0.1 -- Date:September 23,2019,12:08 pm
+User:  -- Action:Login failed! Please try again.
+----------------------
+LOG - IP address:127.0.0.1 -- Date:September 23,2019,12:08 pm
+User:  -- Action:Login failed! Please try again.
+----------------------
+LOG - IP address:127.0.0.1 -- Date:September 23,2019,12:08 pm
+User:  -- Action:Login failed! Please try again.
+----------------------
+LOG - IP address:127.0.0.1 -- Date:September 23,2019,12:08 pm
+User:  -- Action:Login failed! Please try again.
+----------------------
+LOG - IP address:127.0.0.1 -- Date: September 23,2019,12:09 pm
+User: alex -- Action:Login failed! Please try again.
+----------------------
+LOG - IP address:127.0.0.1 -- Date: September 23,2019,12:09 pm
+User: alex -- Action:Login successful!
+----------------------
+LOG - IP address: 127.0.0.1 -- Date: September 23,2019,12:11 pm
+User: alex -- Action:Login failed! Please try again.
+----------------------
+LOG - IP address: 127.0.0.1 -- Date: September 23,2019,12:11 pm
+User: alex -- Action:Login successful!
+----------------------
+LOG - IP address: 127.0.0.1 -- Date: September 23,2019,1:35 pm
+User: user -- Action:Login failed! Please try again.
+----------------------
+LOG - IP address: 127.0.0.1 -- Date: September 23,2019,1:35 pm
+User: user -- Action:Login successful!
+----------------------

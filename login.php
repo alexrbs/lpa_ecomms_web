@@ -39,7 +39,7 @@
 
     if($chkLogin == false) {
       $msg = "Login failed! Please try again.";
-      gen_log();
+      gen_log($uName, $msg);
       }
 
     //Non hashed login
@@ -65,6 +65,8 @@
         $_SESSION['authUser'] = $row['lpa_user_ID'];
         if(!empty($_SESSION['authUser'])){
           header("Location: index.php");
+          $msg = "Login successful!";
+          gen_log($uName, $msg);
           exit;
         }
       }
@@ -72,7 +74,7 @@
 
     if($chkLogin == false) {
       $msg = "Login failed! Please try again.";
-      gen_log();
+      gen_log($uName, $msg);
       }
   }
  build_header();

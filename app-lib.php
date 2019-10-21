@@ -129,7 +129,7 @@ function build_navBlock() {
       <div id="navLog" onclick="navMan('login.php?killses=true')">LOGOUT</div>
     </div>
     <?PHP
-  }else {      //If it does not fall under the admin condiction it builds the navBlock without the admin tab 'register'
+      }else if ($displayGroup == "user"){      //navBlock built for users
       ?>
         <div id="navBlock">
           <div id="navHeader"><b>Welcome: </b><?php echo $displayName ?>
@@ -144,8 +144,22 @@ function build_navBlock() {
           <div id="navLog" onclick="navMan('login.php?killses=true')">LOGOUT</div>
         </div>
       <?PHP
+        }else {     //navBlock built for costumers
+        ?>
+            <div id="navBlock">
+              <div id="navHeader"><b>Welcome: </b><?php echo $displayName ?>
+                <br><b>Status: </b><?php echo $displayGroup ?></br> <!--added to display user privileges-->
+              </div>
+              <div id="navHome"class="navItem" onclick="navMan('index.php')">HOME</div>
+              <div id="navAbout"class="navItem" onclick="navMan('about.php')">ABOUT</div>
+              <div id="navShop" class="navItem" onclick="navMan('shop.php')">SHOP</div>
+              <div id="navShop" class="navItem" onclick="navMan('shop.php')">CART</div>
+              <div class="menuSep"></div>
+              <div id="navLog" onclick="navMan('login.php?killses=true')">LOGOUT</div>
+            </div>
+          <?PHP
+        }
   }
-}
 //End of the Navigation Block function
 
 //Generating ID from the last ID registered on the database
@@ -162,14 +176,23 @@ function gen_ID() {
 //End of ID Generator
 
 //Logs function
-function gen_log(){
+function gen_log($username, $message)
+{
+	$log = "LOG - IP address: ".$_SERVER['REMOTE_ADDR'].' -- Date: '.date("F j,Y,g:i a") .PHP_EOL .
+  "User: " .$username ." -- Action:" .$message . PHP_EOL ."----------------------" .PHP_EOL;
+	file_put_contents('/home/alexander/github/lpa_ecomms_web/log/lpalog.log',$log,FILE_APPEND);
+}
+
+/*
+function gen_log($txt){
   $date = date("Y-m-d h:m:s");
   $file = __FILE__;
   $level = "warning";
 
-  $message = "[{$date}] [{$file}] [{$level}] Error!".PHP_EOL;
+  $message = "[{$txt}][{$date}] [{$file}] [{$level}] Error!".PHP_EOL;
   error_log($message, 3, '/home/alexander/github/lpa_ecomms_web/log/lpalog.log');
-  }
+}
+*/
 //End logs function
 
 /**
