@@ -128,11 +128,11 @@
     $mode = "updateRec";
   }
   build_header($displayName);
-  build_navBlock();
   $fieldSpacer = "5px";
 ?>
 
   <div id="content">
+    <?PHP build_navBlock(); ?>
     <div id="mainC">
       <div class="PageTitle">Users Record (<?PHP echo $action; ?>)</div>
       <form name="frmUserRec" id="frmUserRec" method="post" action="<?PHP echo $_SERVER['PHP_SELF']; ?>">

@@ -13,8 +13,8 @@
   }
   build_header($displayName);
 ?>
-  <?PHP build_navBlock(); ?>
   <div id="content">
+    <?PHP build_navBlock(); ?>
     <div id="mainC">
       <div class="PageTitle">Users Search</div>
 
