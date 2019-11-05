@@ -125,6 +125,7 @@ function build_navBlock() {
       <div id="navStock"class="navItem" onclick="navMan('stock.php')">STOCK</div>
       <div id="navSales" class="navItem" onclick="navMan('sales.php')">SALES</div>
       <div id="navShop" class="navItem" onclick="navMan('shop.php')">SHOP</div>
+      <div class="navItem" onclick="navMan('shoplist.php')">CART</div>
       <div class="menuSep"></div>
       <div id="navLog" onclick="navMan('login.php?killses=true')">LOGOUT</div>
     </div>
@@ -140,6 +141,7 @@ function build_navBlock() {
           <div id="navStock"class="navItem" onclick="navMan('stock.php')">STOCK</div>
           <div id="navSales" class="navItem" onclick="navMan('sales.php')">SALES</div>
           <div id="navShop" class="navItem" onclick="navMan('shop.php')">SHOP</div>
+          <div class="navItem" onclick="navMan('shoplist.php')">CART</div>
           <div class="menuSep"></div>
           <div id="navLog" onclick="navMan('login.php?killses=true')">LOGOUT</div>
         </div>
@@ -153,7 +155,7 @@ function build_navBlock() {
               <div id="navHome"class="navItem" onclick="navMan('index.php')">HOME</div>
               <div id="navAbout"class="navItem" onclick="navMan('about.php')">ABOUT</div>
               <div id="navShop" class="navItem" onclick="navMan('shop.php')">SHOP</div>
-              <div id="navShop" class="navItem" onclick="navMan('shop.php')">CART</div>
+              <div id="navShop" class="navItem" onclick="navMan('shoplist.php')">CART</div>
               <div class="menuSep"></div>
               <div id="navLog" onclick="navMan('login.php?killses=true')">LOGOUT</div>
             </div>
