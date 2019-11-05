@@ -8,7 +8,7 @@
       $uName = $_POST['fldUsername'] : $uName = "";
     isset($_POST['fldPassword'])?
       $uPassword = $_POST['fldPassword'] : $uPassword = "";
-      $hashedPassword = hash("sha512", $uPassword);
+      $hashedPassword = hash("md5", $uPassword);
     //Hashed login
     openDB();
     $query =
