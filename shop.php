@@ -35,6 +35,7 @@
 
   <form action="" method="post">
     <div class="displayPane">
+      <div class="displayPaneCaption">Search:</div>
       <div>
         <input id="txtSearch" name="txtSearch" value="" placeholder="Search...." style="width: calc(90% - 115px)">
         <button type="submit">Search</button>
