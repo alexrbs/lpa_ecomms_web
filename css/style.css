@@ -75,6 +75,22 @@ a:hover {
   border-bottom: 2px solid #777777;
 }
 
+#regist{
+	margin-left: 20%;
+	margin-right: 40%;
+}
+
+.shopTotal{
+	position: relative;
+	font: bold 18px/25px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #202f40;
+	height: 25px;
+	border-bottom: #777777 solid 1px;
+	padding: 0 0 2px 5px;
+	background: #EEEEEE;
+	margin-left: 16%;
+}
+
 #miss{
 	float: left;
 	height: 165px;
@@ -235,17 +251,17 @@ a:hover {
 }
 .prodTitle {
     position: relative;
-    margin: 5px 2px 0px 160px;
-    font: bold 15px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    margin: 5px 0 2px 157px;
+    font: bold 18px/25px "Trebuchet MS", Arial, Helvetica, sans-serif;
     color: #202f40;
     height: 25px;
-    border: #777777 solid 1px;
-    padding: 5px 0px 0px 5px;
+    border-bottom: #777777 solid 1px;
+    padding: 0 0 2px 5px;
     background: #EEEEEE;
 }
 .prodDesc {
 		position: relative;
-		margin: 5px 5px 0 160px;
+		margin: 5px 5px 0 0;
 		height: 125px;
 }
 .prodOptionsFrame {
@@ -263,11 +279,12 @@ a:hover {
 }
 .prodPrice {
     font-weight: bold;
-    margin-right: 20px;
+    margin-right: 5px;
     color: #000000;
 }
 .prodQty {
     font-weight: bold;
+		margin-right: 5px;
 }
 .prodQtyFld input {
     width: 50px;
