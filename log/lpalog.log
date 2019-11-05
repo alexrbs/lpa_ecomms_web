@@ -40,3 +40,33 @@ User: user -- Action:Login failed! Please try again.
 LOG - IP address: 127.0.0.1 -- Date: September 23,2019,1:35 pm
 User: user -- Action:Login successful!
 ----------------------
+LOG - IP address: 127.0.0.1 -- Date: October 28,2019,3:47 pm
+User: james -- Action:error to register
+----------------------
+LOG - IP address: 127.0.0.1 -- Date: October 28,2019,4:23 pm
+User: toby -- Action:success to register
+----------------------
+LOG - IP address: 127.0.0.1 -- Date: October 28,2019,4:27 pm
+User: admin -- Action:Login failed! Please try again.
+----------------------
+LOG - IP address: 127.0.0.1 -- Date: October 28,2019,4:27 pm
+User: admin -- Action:Login successful!
+----------------------
+LOG - IP address: 127.0.0.1 -- Date: October 29,2019,11:19 am
+User: admin -- Action:Login failed! Please try again.
+----------------------
+LOG - IP address: 127.0.0.1 -- Date: October 29,2019,11:19 am
+User: admin -- Action:Login successful!
+----------------------
+LOG - IP address: ::1 -- Date: November 1,2019,10:54 am
+User: admin -- Action:Login failed! Please try again.
+----------------------
+LOG - IP address: ::1 -- Date: November 1,2019,10:54 am
+User: admin -- Action:Login successful!
+----------------------
+LOG - IP address: ::1 -- Date: November 3,2019,6:00 pm
+User: admin -- Action:Login failed! Please try again.
+----------------------
+LOG - IP address: ::1 -- Date: November 3,2019,6:00 pm
+User: admin -- Action:Login successful!
+----------------------
